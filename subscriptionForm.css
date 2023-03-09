@@ -8,6 +8,8 @@
   padding: 20px 30px;
   transform: translateX(110%);
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  z-index: 10000;
+  font-family: 'AppleSDGothic, "apple sd gothic neo", "noto sans korean", "noto sans korean regular", "noto sans cjk kr", "noto sans cjk", "nanum gothic", "malgun gothic", dotum, arial, helvetica, sans-serif';
 }
 
 .ez-wrapper.active {
