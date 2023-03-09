@@ -1,11 +1,11 @@
-const ezWrapper = document.querySelector('.ez-wrapper');
-const ezForm = document.querySelector('.ez-form');
-const ezFormEmail = document.querySelector('#ez-email');
-const ezFormName = document.querySelector('#ez-name');
-const submitButon = document.querySelector('.ez-button');
-const invalidEmail = document.querySelector('#ez-email-invalid-span');
-const invalidName = document.querySelector('#ez-name-invalid-span');
-const closeButton = document.querySelector('.ez-close-button');
+const $ezWrapper = document.querySelector('.ez-wrapper');
+const $ezForm = document.querySelector('.ez-form');
+const $ezFormEmail = document.querySelector('#ez-email');
+const $ezFormName = document.querySelector('#ez-name');
+const $submitButon = document.querySelector('.ez-button');
+const $invalidEmail = document.querySelector('#ez-email-invalid-span');
+const $invalidName = document.querySelector('#ez-name-invalid-span');
+const $closeButton = document.querySelector('.ez-close-button');
 const pageHeight = Math.max(
   document.body.scrollHeight, document.documentElement.scrollHeight,
   document.body.offsetHeight, document.documentElement.offsetHeight,
@@ -14,36 +14,36 @@ const pageHeight = Math.max(
 const scrollHeight = pageHeight - document.documentElement.clientHeight;
 
 if (pageHeight === innerHeight) {
-  ezWrapper.classList.add('active');
+  $ezWrapper.classList.add('active');
 }
 
-ezForm.addEventListener('submit', async e => {
+$ezForm.addEventListener('submit', async e => {
   e.preventDefault();
 
   const inputEmail = document.querySelector('#ez-email');
   const inputName = document.querySelector('#ez-name');
 
   if (!validateEmail(inputEmail.value)) {
-    invalidEmail.removeAttribute("hidden");
+    $invalidEmail.removeAttribute("hidden");
 
     return false;
   } else {
-    invalidEmail.setAttribute("hidden", true);
+    $invalidEmail.setAttribute("hidden", true);
   }
 
   if (!inputName.value) {
-    invalidName.removeAttribute("hidden");
+    $invalidName.removeAttribute("hidden");
 
     return false;
   } else {
-    invalidName.setAttribute("hidden", true);
+    $invalidName.setAttribute("hidden", true);
   }
   
   const formData = {
-    "email": ezFormEmail.value,
-    "name": ezFormName.value
+    "email": $ezFormEmail.value,
+    "name": $ezFormName.value
   }
-  const FETCH_URL = 'https://proxy.cors.sh/' + ezForm.action;
+  const FETCH_URL = 'https://proxy.cors.sh/' + $ezForm.action;
   const options = {
     method: 'POST',
     headers: {
@@ -61,15 +61,15 @@ ezForm.addEventListener('submit', async e => {
   }
 });
 
-closeButton.addEventListener('click', e => {
-  ezWrapper.classList.remove('active');
+$closeButton.addEventListener('click', e => {
+  $ezWrapper.classList.remove('active');
 })
 
 window.addEventListener('scroll', e => {
   if (pageYOffset > scrollHeight - 300) {
-    ezWrapper.classList.add('active');
+    $ezWrapper.classList.add('active');
   } else {
-    ezWrapper.classList.remove('active');
+    $ezWrapper.classList.remove('active');
   }
 });
 
