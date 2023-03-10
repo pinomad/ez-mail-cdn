@@ -40,8 +40,10 @@ $ezForm.addEventListener('submit', async e => {
   }
   
   const formData = {
-    "email": $ezFormEmail.value,
-    "name": $ezFormName.value
+    "subscriber": {
+      "email": $ezFormEmail.value,
+      "name": $ezFormName.value
+    }
   }
   const FETCH_URL = $ezForm.action;
   const options = {
