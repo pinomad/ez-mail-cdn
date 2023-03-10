@@ -61,6 +61,7 @@ $ezForm.addEventListener('submit', async e => {
     
     $ezFormEmail.value = '';
     $ezFormName.value = '';
+    $ezWrapper.classList.remove('active');
   } else {
     alert("구독자 추가 실패");
   }
