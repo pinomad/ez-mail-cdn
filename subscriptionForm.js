@@ -58,6 +58,10 @@ $ezForm.addEventListener('submit', async e => {
 
   if (response.status === 201) {
     alert("구독자 추가 성공");
+    
+    $ezFormEmail.value = '';
+    $ezFormName.value = '';
+    $ezWrapper.classList.remove('active');
   } else {
     alert("구독자 추가 실패");
   }
