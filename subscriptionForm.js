@@ -51,7 +51,6 @@ $ezForm.addEventListener('submit', async e => {
     headers: {
       'Content-Type': 'application/json',
     },
-    credentials: 'include',
     body: JSON.stringify(formData),
   };
   const response = await fetch(FETCH_URL, options);
