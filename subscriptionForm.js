@@ -64,10 +64,10 @@ $ezForm.addEventListener('submit', async e => {
       $ezFormName.value = '';
       $ezWrapper.classList.remove('active');
     } else {
-      alert("구독자 추가를 실패했습니다. origin을 정확하게 입력해주세요!");
+      alert("구독자 추가를 실패했습니다.");
     }
   } catch (error) {
-    alert("구독자 추가를 실패했습니다. origin을 정확하게 입력해주세요!");
+    alert("구독자 추가를 실패했습니다.");
   }
 });
 
