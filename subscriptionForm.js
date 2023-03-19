@@ -53,16 +53,21 @@ $ezForm.addEventListener('submit', async e => {
     },
     body: JSON.stringify(formData),
   };
-  const response = await fetch(FETCH_URL, options);
 
-  if (response.status === 201) {
-    alert("구독자 추가 성공");
-    
-    $ezFormEmail.value = '';
-    $ezFormName.value = '';
-    $ezWrapper.classList.remove('active');
-  } else {
-    alert("구독자 추가 실패");
+  try {
+    const response = await fetch(FETCH_URL, options);
+
+    if (response.status === 201) {
+      alert("구독자 추가 성공!");
+
+      $ezFormEmail.value = '';
+      $ezFormName.value = '';
+      $ezWrapper.classList.remove('active');
+    } else {
+      alert("구독자 추가를 실패했습니다. origin을 정확하게 입력해주세요!");
+    }
+  } catch (error) {
+    alert("구독자 추가를 실패했습니다. origin을 정확하게 입력해주세요!");
   }
 });
 
